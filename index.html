@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Parcelwise pricing: shipping labels and tracking pages for small web shops." />
+    <title>Pricing · Parcelwise</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <a class="logo" href="#main" aria-label="Parcelwise home">Parcelwise</a>
+      <nav aria-label="Main">
+        <ul class="nav">
+          <li><a href="#plans" aria-current="page">Pricing</a></li>
+          <li><a href="#compare">Compare plans</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" aria-labelledby="page-title">
+        <h1 id="page-title">Shipping labels without the busywork</h1>
+        <p class="lede">Print labels for PostNL, DHL and DPD from one screen and send customers a tracking page with your own logo. Start free and upgrade when your order volume grows.</p>
+
+        <fieldset class="billing">
+          <legend class="visually-hidden">Billing period</legend>
+          <input type="radio" id="billing-monthly" name="billing" value="monthly" checked />
+          <label for="billing-monthly">Monthly</label>
+          <input type="radio" id="billing-yearly" name="billing" value="yearly" />
+          <label for="billing-yearly">Yearly <span class="billing__save">2 months free</span></label>
+        </fieldset>
+        <p id="billing-status" class="visually-hidden" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="plans" class="plans" aria-label="Plans">
+        <article class="plan" data-plan="starter" aria-labelledby="plan-starter">
+          <h2 id="plan-starter">Starter</h2>
+          <p class="plan__for">For trying it out with your first orders.</p>
+          <p class="price"><span class="price__amount" data-price></span> <span class="price__unit">per month</span></p>
+          <p class="price__note" data-billing-note></p>
+          <ul class="plan__features">
+            <li>50 labels a month</li>
+            <li>PostNL and DHL</li>
+            <li>Standard tracking page</li>
+          </ul>
+          <a class="button" href="#signup">Start with Starter</a>
+        </article>
+
+        <article class="plan plan--featured" data-plan="shop" aria-labelledby="plan-shop">
+          <p class="plan__badge">Most popular</p>
+          <h2 id="plan-shop">Shop</h2>
+          <p class="plan__for">For shops shipping every day.</p>
+          <p class="price"><span class="price__amount" data-price></span> <span class="price__unit">per month</span></p>
+          <p class="price__note" data-billing-note></p>
+          <ul class="plan__features">
+            <li>1,000 labels a month</li>
+            <li>PostNL, DHL and DPD</li>
+            <li>Branded tracking page</li>
+            <li>Batch printing</li>
+          </ul>
+          <a class="button button--primary" href="#signup">Start with Shop</a>
+        </article>
+
+        <article class="plan" data-plan="studio" aria-labelledby="plan-studio">
+          <h2 id="plan-studio">Studio</h2>
+          <p class="plan__for">For teams and several warehouses.</p>
+          <p class="price"><span class="price__amount" data-price></span> <span class="price__unit">per month</span></p>
+          <p class="price__note" data-billing-note></p>
+          <ul class="plan__features">
+            <li>Unlimited labels</li>
+            <li>All carriers, including returns</li>
+            <li>5 team members</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="button" href="#signup">Start with Studio</a>
+        </article>
+      </section>
+
+      <section id="compare" class="compare" aria-labelledby="compare-title">
+        <h2 id="compare-title">Compare plans</h2>
+        <div class="table-wrap" tabindex="0" role="region" aria-labelledby="compare-title">
+          <table>
+            <caption class="visually-hidden">Features included in each plan</caption>
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Starter</th>
+                <th scope="col">Shop</th>
+                <th scope="col">Studio</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">Labels per month</th>
+              <td>50</td>
+              <td>1,000</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <th scope="row">Carriers</th>
+              <td>2</td>
+              <td>3</td>
+              <td>All</td>
+            </tr>
+            <tr>
+              <th scope="row">Branded tracking page</th>
+              <td><span aria-hidden="true">–</span><span class="visually-hidden">Not included</span></td>
+              <td><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+              <td><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Batch printing</th>
+              <td><span aria-hidden="true">–</span><span class="visually-hidden">Not included</span></td>
+              <td><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+              <td><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Return labels</th>
+              <td><span aria-hidden="true">–</span><span class="visually-hidden">Not included</span></td>
+              <td><span aria-hidden="true">–</span><span class="visually-hidden">Not included</span></td>
+              <td><span aria-hidden="true">✓</span><span class="visually-hidden">Included</span></td>
+            </tr>
+            <tr>
+              <th scope="row">Team members</th>
+              <td>1</td>
+              <td>2</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th scope="row">Support</th>
+              <td>Email</td>
+              <td>Email</td>
+              <td>Priority, same day</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="faq" class="faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions</h2>
+        <details>
+          <summary>What happens when I go over my label limit?</summary>
+          <p>Labels keep printing. We email you at 80% and 100% of the limit, and extra labels cost € 0,05 each until the next month starts.</p>
+        </details>
+        <details>
+          <summary>Can I switch between monthly and yearly billing?</summary>
+          <p>Yes. Switching to yearly charges the rest of the year at the yearly price, minus what you already paid this month.</p>
+        </details>
+        <details>
+          <summary>Do prices include VAT?</summary>
+          <p>No. Prices are shown without 21% Dutch VAT, which is added on the invoice. Businesses elsewhere in the EU with a VAT number are billed with reverse charge.</p>
+        </details>
+        <details>
+          <summary>Can I cancel at any time?</summary>
+          <p>Monthly plans stop at the end of the current month. Yearly plans run to the end of the paid year and are not renewed.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Parcelwise is a demo product made for this portfolio page.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

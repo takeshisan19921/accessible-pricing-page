@@ -1,0 +1,142 @@
+:root {
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --border: #dedad3;
+  --text: #16171a;
+  --muted: #55595f;
+  --accent: #0b5e57;
+  --accent-strong: #08463f;
+  --accent-soft: #e3f1ef;
+  --focus: #c2410c;
+  --radius: 14px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2 { line-height: 1.2; margin: 0; }
+p { margin: 0; }
+a { color: var(--accent); }
+main:focus { outline: none; }
+
+/* One focus style for every interactive element, visible on light and tinted backgrounds. */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.skip-link {
+  position: absolute; left: 16px; top: -48px; z-index: 10; padding: 10px 16px;
+  background: var(--text); color: #fff; border-radius: 8px; font-weight: 600; text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+.site-header {
+  max-width: 1120px; margin: 0 auto; padding: 20px;
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.logo { font-weight: 800; font-size: 1.2rem; color: var(--text); text-decoration: none; letter-spacing: -0.01em; }
+.nav { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav a { display: block; padding: 8px 12px; border-radius: 8px; color: var(--text); text-decoration: none; font-weight: 500; }
+.nav a:hover { background: #f0ede8; }
+.nav a[aria-current='page'] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+
+main { max-width: 1120px; margin: 0 auto; padding: 0 20px 64px; display: grid; gap: 64px; }
+
+.hero { text-align: center; padding-top: 32px; display: grid; justify-items: center; gap: 20px; }
+.hero h1 { font-size: clamp(2rem, 4vw + 1rem, 3.2rem); letter-spacing: -0.02em; max-width: 18ch; }
+.lede { font-size: 1.1rem; color: var(--muted); max-width: 60ch; }
+
+/* Segmented control built from real radio buttons, so arrow keys and screen readers work natively. */
+.billing {
+  display: inline-grid; grid-template-columns: auto auto; border: 1px solid var(--border); border-radius: 999px;
+  padding: 4px; margin: 0; background: var(--surface); position: relative;
+}
+.billing input { position: absolute; opacity: 0; pointer-events: none; }
+.billing label {
+  padding: 9px 20px; border-radius: 999px; cursor: pointer; font-weight: 600; color: var(--muted);
+  display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s, color 0.2s;
+}
+.billing input:checked + label { background: var(--accent); color: #fff; }
+.billing input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.billing__save { font-size: 0.75rem; padding: 2px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); }
+.billing input:checked + label .billing__save { background: rgba(255, 255, 255, 0.2); color: #fff; }
+
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; align-items: stretch; }
+.plan {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px;
+  display: grid; grid-template-rows: auto auto auto auto 1fr auto; gap: 12px; position: relative;
+}
+.plan h2 { font-size: 1.25rem; }
+.plan__for { color: var(--muted); }
+.plan--featured { border: 2px solid var(--accent); box-shadow: 0 12px 32px rgba(11, 94, 87, 0.12); }
+.plan__badge {
+  position: absolute; top: -13px; left: 28px; background: var(--accent); color: #fff;
+  font-size: 0.78rem; font-weight: 700; padding: 3px 12px; border-radius: 999px;
+}
+.price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.price__amount { font-size: 2.6rem; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.price__unit { color: var(--muted); }
+.price__note { font-size: 0.88rem; color: var(--muted); min-height: 1.4em; }
+.plan__features { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 8px; align-content: start; }
+.plan__features li { padding-left: 26px; position: relative; }
+.plan__features li::before {
+  content: ''; position: absolute; left: 2px; top: 0.45em; width: 12px; height: 7px;
+  border-left: 2.5px solid var(--accent); border-bottom: 2.5px solid var(--accent); transform: rotate(-45deg);
+}
+
+.button {
+  display: block; text-align: center; padding: 12px 18px; border-radius: 10px; font-weight: 650; text-decoration: none;
+  border: 1.5px solid var(--accent); color: var(--accent); background: var(--surface); margin-top: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.button:hover { background: var(--accent-soft); }
+.button--primary { background: var(--accent); color: #fff; }
+.button--primary:hover { background: var(--accent-strong); }
+
+.compare h2, .faq h2 { font-size: 1.6rem; margin-bottom: 20px; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: 14px 18px; text-align: center; border-bottom: 1px solid var(--border); }
+thead th { font-size: 1rem; }
+tbody th { text-align: left; font-weight: 500; }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+tbody tr:nth-child(even) { background: #faf9f6; }
+thead th:nth-child(3), tbody td:nth-child(3) { background: rgba(11, 94, 87, 0.05); }
+td [aria-hidden='true'] { font-weight: 700; color: var(--accent); font-size: 1.1rem; }
+
+.faq { max-width: 760px; width: 100%; margin: 0 auto; }
+.faq details { border-bottom: 1px solid var(--border); }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 18px 36px 18px 0; font-weight: 600; position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+'; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-size: 1.4rem; color: var(--accent); transition: transform 0.2s;
+}
+.faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.faq details p { padding: 0 0 18px; color: var(--muted); max-width: 65ch; }
+
+.site-footer { text-align: center; padding: 24px 20px 40px; color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--border); }
+
+@media (max-width: 600px) {
+  .plan { padding: 24px 20px; }
+  .billing label { padding: 9px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+
+/* Windows high contrast: keep the selected toggle and the featured plan distinguishable. */
+@media (forced-colors: active) {
+  .billing input:checked + label { outline: 2px solid CanvasText; }
+  .plan--featured { border: 3px solid CanvasText; }
+  .plan__features li::before { border-color: CanvasText; }
+}
